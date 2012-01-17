@@ -19,6 +19,8 @@
 		F714B10714C5BE6B0050805F /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F714B10614C5BE6B0050805F /* DetailViewController.m */; };
 		F714B10A14C5BE6B0050805F /* MasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F714B10814C5BE6B0050805F /* MasterViewController.xib */; };
 		F714B10D14C5BE6B0050805F /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F714B10B14C5BE6B0050805F /* DetailViewController.xib */; };
+		F714B11514C5C3D90050805F /* FetchedResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F714B11414C5C3D90050805F /* FetchedResultsViewController.m */; };
+		F714B11814C5C9010050805F /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = F714B11714C5C9010050805F /* Item.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,10 @@
 		F714B10614C5BE6B0050805F /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		F714B10914C5BE6B0050805F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MasterViewController.xib; sourceTree = "<group>"; };
 		F714B10C14C5BE6B0050805F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DetailViewController.xib; sourceTree = "<group>"; };
+		F714B11314C5C3D90050805F /* FetchedResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FetchedResultsViewController.h; sourceTree = "<group>"; };
+		F714B11414C5C3D90050805F /* FetchedResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FetchedResultsViewController.m; sourceTree = "<group>"; };
+		F714B11614C5C9010050805F /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
+		F714B11714C5C9010050805F /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,12 +98,16 @@
 				F714B0FD14C5BE6A0050805F /* AppDelegate.m */,
 				F714B10214C5BE6B0050805F /* MasterViewController.h */,
 				F714B10314C5BE6B0050805F /* MasterViewController.m */,
+				F714B11314C5C3D90050805F /* FetchedResultsViewController.h */,
+				F714B11414C5C3D90050805F /* FetchedResultsViewController.m */,
 				F714B10514C5BE6B0050805F /* DetailViewController.h */,
 				F714B10614C5BE6B0050805F /* DetailViewController.m */,
 				F714B10814C5BE6B0050805F /* MasterViewController.xib */,
 				F714B10B14C5BE6B0050805F /* DetailViewController.xib */,
 				F714B0FF14C5BE6A0050805F /* DoubleFetch.xcdatamodeld */,
 				F714B0F414C5BE670050805F /* Supporting Files */,
+				F714B11614C5C9010050805F /* Item.h */,
+				F714B11714C5C9010050805F /* Item.m */,
 			);
 			path = DoubleFetch;
 			sourceTree = "<group>";
@@ -181,6 +191,8 @@
 				F714B10114C5BE6A0050805F /* DoubleFetch.xcdatamodeld in Sources */,
 				F714B10414C5BE6B0050805F /* MasterViewController.m in Sources */,
 				F714B10714C5BE6B0050805F /* DetailViewController.m in Sources */,
+				F714B11514C5C3D90050805F /* FetchedResultsViewController.m in Sources */,
+				F714B11814C5C9010050805F /* Item.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

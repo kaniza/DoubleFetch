@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "Item.h"
 #import "MasterViewController.h"
 
 @implementation AppDelegate
@@ -114,6 +114,14 @@
     {
         __managedObjectContext = [[NSManagedObjectContext alloc] init];
         [__managedObjectContext setPersistentStoreCoordinator:coordinator];
+        if ([[__managedObjectContext registeredObjects] count] == 0) {
+            for (NSUInteger i = 0; i < 1000; i++) {
+                NSString *title = [NSString stringWithFormat:@"Item %d", i];
+                Item *item = [NSEntityDescription insertNewObjectForEntityForName:@"Item" inManagedObjectContext:__managedObjectContext];
+                item.checked = NO;
+                item.title = title;
+            }
+        }
     }
     return __managedObjectContext;
 }

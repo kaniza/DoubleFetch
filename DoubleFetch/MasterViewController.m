@@ -16,8 +16,7 @@
 
 @implementation MasterViewController
 
-@synthesize detailViewController = _detailViewController;
-@synthesize fetchedResultsController = __fetchedResultsController;
+
 @synthesize managedObjectContext = __managedObjectContext;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -31,8 +30,6 @@
 							
 - (void)dealloc
 {
-    [_detailViewController release];
-    [__fetchedResultsController release];
     [__managedObjectContext release];
     [super dealloc];
 }
@@ -92,13 +89,12 @@
 // Customize the number of sections in the table view.
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return [[self.fetchedResultsController sections] count];
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    id <NSFetchedResultsSectionInfo> sectionInfo = [[self.fetchedResultsController sections] objectAtIndex:section];
-    return [sectionInfo numberOfObjects];
+    return 3;
 }
 
 // Customize the appearance of table view cells.
@@ -111,8 +107,10 @@
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
+    cell.textLabel.text = [[NSArray arrayWithObjects:@"All", @"Checked 1", @"Checked 2", nil] objectAtIndex:indexPath.row];
+    
 
-    [self configureCell:cell atIndexPath:indexPath];
+    //[self configureCell:cell atIndexPath:indexPath];
     return cell;
 }
 
@@ -125,41 +123,35 @@
 }
 */
 
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+- (NSPredicate *)predicateForChecked
 {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the managed object for the given index path
-        NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
-        [context deleteObject:[self.fetchedResultsController objectAtIndexPath:indexPath]];
-        
-        // Save the context.
-        NSError *error = nil;
-        if (![context save:&error]) {
-            /*
-             Replace this implementation with code to handle the error appropriately.
-             
-             abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. 
-             */
-            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-            abort();
-        }
-    }   
-}
+    NSFetchRequest *request = [[[NSFetchRequest alloc] init] autorelease];
+    [request setEntity:[NSEntityDescription entityForName:@"Item" inManagedObjectContext:self.managedObjectContext]];
 
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // The table view should not be re-orderable.
-    return NO;
+    NSSortDescriptor *sortDescriptor = [[[NSSortDescriptor alloc] initWithKey:@"title" ascending:YES] autorelease];
+    NSArray *sortDescriptors = [NSArray arrayWithObjects:sortDescriptor, nil];
+    [request setSortDescriptors:sortDescriptors];
+    [request setResultType:NSManagedObjectIDResultType];
+    NSError *err = nil;
+    NSArray *result = [self.managedObjectContext executeFetchRequest:request error:&err];
+    return [NSPredicate predicateWithFormat:@"self in %@", result];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (!self.detailViewController) {
-        self.detailViewController = [[[DetailViewController alloc] initWithNibName:@"DetailViewController" bundle:nil] autorelease];
+    NSPredicate *predicate = nil;
+    switch (indexPath.row) {
+        case 1:
+            predicate = [NSPredicate predicateWithFormat:@"checked = YES"];
+            break;
+        case 2:
+            predicate = [self predicateForChecked];
+        default:
+            predicate = nil;
+            break;
     }
-    NSManagedObject *selectedObject = [[self fetchedResultsController] objectAtIndexPath:indexPath];
-    self.detailViewController.detailItem = selectedObject;    
-    [self.navigationController pushViewController:self.detailViewController animated:YES];
+    FetchedResultsViewController *viewController = [[[FetchedResultsViewController alloc] initWithPredicate:predicate] autorelease];
+    [self.navigationController pushViewController:viewController animated:YES];
 }
 
 #pragma mark - Fetched results controller
