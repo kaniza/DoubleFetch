@@ -1,0 +1,318 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F714B0EC14C5BE670050805F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F714B0EB14C5BE660050805F /* UIKit.framework */; };
+		F714B0EE14C5BE670050805F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F714B0ED14C5BE670050805F /* Foundation.framework */; };
+		F714B0F014C5BE670050805F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F714B0EF14C5BE670050805F /* CoreGraphics.framework */; };
+		F714B0F214C5BE670050805F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F714B0F114C5BE670050805F /* CoreData.framework */; };
+		F714B0F814C5BE670050805F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F714B0F614C5BE670050805F /* InfoPlist.strings */; };
+		F714B0FA14C5BE670050805F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F714B0F914C5BE670050805F /* main.m */; };
+		F714B0FE14C5BE6A0050805F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F714B0FD14C5BE6A0050805F /* AppDelegate.m */; };
+		F714B10114C5BE6A0050805F /* DoubleFetch.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F714B0FF14C5BE6A0050805F /* DoubleFetch.xcdatamodeld */; };
+		F714B10414C5BE6B0050805F /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F714B10314C5BE6B0050805F /* MasterViewController.m */; };
+		F714B10714C5BE6B0050805F /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F714B10614C5BE6B0050805F /* DetailViewController.m */; };
+		F714B10A14C5BE6B0050805F /* MasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F714B10814C5BE6B0050805F /* MasterViewController.xib */; };
+		F714B10D14C5BE6B0050805F /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F714B10B14C5BE6B0050805F /* DetailViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F714B0E714C5BE660050805F /* DoubleFetch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoubleFetch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F714B0EB14C5BE660050805F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		F714B0ED14C5BE670050805F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F714B0EF14C5BE670050805F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		F714B0F114C5BE670050805F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		F714B0F514C5BE670050805F /* DoubleFetch-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DoubleFetch-Info.plist"; sourceTree = "<group>"; };
+		F714B0F714C5BE670050805F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F714B0F914C5BE670050805F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F714B0FB14C5BE670050805F /* DoubleFetch-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DoubleFetch-Prefix.pch"; sourceTree = "<group>"; };
+		F714B0FC14C5BE670050805F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F714B0FD14C5BE6A0050805F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F714B10014C5BE6A0050805F /* DoubleFetch.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DoubleFetch.xcdatamodel; sourceTree = "<group>"; };
+		F714B10214C5BE6B0050805F /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		F714B10314C5BE6B0050805F /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		F714B10514C5BE6B0050805F /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		F714B10614C5BE6B0050805F /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		F714B10914C5BE6B0050805F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MasterViewController.xib; sourceTree = "<group>"; };
+		F714B10C14C5BE6B0050805F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DetailViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F714B0E414C5BE660050805F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F714B0EC14C5BE670050805F /* UIKit.framework in Frameworks */,
+				F714B0EE14C5BE670050805F /* Foundation.framework in Frameworks */,
+				F714B0F014C5BE670050805F /* CoreGraphics.framework in Frameworks */,
+				F714B0F214C5BE670050805F /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F714B0DC14C5BE650050805F = {
+			isa = PBXGroup;
+			children = (
+				F714B0F314C5BE670050805F /* DoubleFetch */,
+				F714B0EA14C5BE660050805F /* Frameworks */,
+				F714B0E814C5BE660050805F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F714B0E814C5BE660050805F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F714B0E714C5BE660050805F /* DoubleFetch.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F714B0EA14C5BE660050805F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F714B0EB14C5BE660050805F /* UIKit.framework */,
+				F714B0ED14C5BE670050805F /* Foundation.framework */,
+				F714B0EF14C5BE670050805F /* CoreGraphics.framework */,
+				F714B0F114C5BE670050805F /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F714B0F314C5BE670050805F /* DoubleFetch */ = {
+			isa = PBXGroup;
+			children = (
+				F714B0FC14C5BE670050805F /* AppDelegate.h */,
+				F714B0FD14C5BE6A0050805F /* AppDelegate.m */,
+				F714B10214C5BE6B0050805F /* MasterViewController.h */,
+				F714B10314C5BE6B0050805F /* MasterViewController.m */,
+				F714B10514C5BE6B0050805F /* DetailViewController.h */,
+				F714B10614C5BE6B0050805F /* DetailViewController.m */,
+				F714B10814C5BE6B0050805F /* MasterViewController.xib */,
+				F714B10B14C5BE6B0050805F /* DetailViewController.xib */,
+				F714B0FF14C5BE6A0050805F /* DoubleFetch.xcdatamodeld */,
+				F714B0F414C5BE670050805F /* Supporting Files */,
+			);
+			path = DoubleFetch;
+			sourceTree = "<group>";
+		};
+		F714B0F414C5BE670050805F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F714B0F514C5BE670050805F /* DoubleFetch-Info.plist */,
+				F714B0F614C5BE670050805F /* InfoPlist.strings */,
+				F714B0F914C5BE670050805F /* main.m */,
+				F714B0FB14C5BE670050805F /* DoubleFetch-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F714B0E614C5BE660050805F /* DoubleFetch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F714B11014C5BE6B0050805F /* Build configuration list for PBXNativeTarget "DoubleFetch" */;
+			buildPhases = (
+				F714B0E314C5BE660050805F /* Sources */,
+				F714B0E414C5BE660050805F /* Frameworks */,
+				F714B0E514C5BE660050805F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DoubleFetch;
+			productName = DoubleFetch;
+			productReference = F714B0E714C5BE660050805F /* DoubleFetch.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F714B0DE14C5BE650050805F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = F714B0E114C5BE660050805F /* Build configuration list for PBXProject "DoubleFetch" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = F714B0DC14C5BE650050805F;
+			productRefGroup = F714B0E814C5BE660050805F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F714B0E614C5BE660050805F /* DoubleFetch */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F714B0E514C5BE660050805F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F714B0F814C5BE670050805F /* InfoPlist.strings in Resources */,
+				F714B10A14C5BE6B0050805F /* MasterViewController.xib in Resources */,
+				F714B10D14C5BE6B0050805F /* DetailViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F714B0E314C5BE660050805F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F714B0FA14C5BE670050805F /* main.m in Sources */,
+				F714B0FE14C5BE6A0050805F /* AppDelegate.m in Sources */,
+				F714B10114C5BE6A0050805F /* DoubleFetch.xcdatamodeld in Sources */,
+				F714B10414C5BE6B0050805F /* MasterViewController.m in Sources */,
+				F714B10714C5BE6B0050805F /* DetailViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F714B0F614C5BE670050805F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F714B0F714C5BE670050805F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		F714B10814C5BE6B0050805F /* MasterViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F714B10914C5BE6B0050805F /* en */,
+			);
+			name = MasterViewController.xib;
+			sourceTree = "<group>";
+		};
+		F714B10B14C5BE6B0050805F /* DetailViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F714B10C14C5BE6B0050805F /* en */,
+			);
+			name = DetailViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F714B10E14C5BE6B0050805F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		F714B10F14C5BE6B0050805F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F714B11114C5BE6B0050805F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DoubleFetch/DoubleFetch-Prefix.pch";
+				INFOPLIST_FILE = "DoubleFetch/DoubleFetch-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		F714B11214C5BE6B0050805F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DoubleFetch/DoubleFetch-Prefix.pch";
+				INFOPLIST_FILE = "DoubleFetch/DoubleFetch-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F714B0E114C5BE660050805F /* Build configuration list for PBXProject "DoubleFetch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F714B10E14C5BE6B0050805F /* Debug */,
+				F714B10F14C5BE6B0050805F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F714B11014C5BE6B0050805F /* Build configuration list for PBXNativeTarget "DoubleFetch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F714B11114C5BE6B0050805F /* Debug */,
+				F714B11214C5BE6B0050805F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F714B0FF14C5BE6A0050805F /* DoubleFetch.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F714B10014C5BE6A0050805F /* DoubleFetch.xcdatamodel */,
+			);
+			currentVersion = F714B10014C5BE6A0050805F /* DoubleFetch.xcdatamodel */;
+			path = DoubleFetch.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = F714B0DE14C5BE650050805F /* Project object */;
+}
