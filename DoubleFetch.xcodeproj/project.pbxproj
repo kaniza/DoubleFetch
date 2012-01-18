@@ -16,9 +16,7 @@
 		F714B0FE14C5BE6A0050805F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F714B0FD14C5BE6A0050805F /* AppDelegate.m */; };
 		F714B10114C5BE6A0050805F /* DoubleFetch.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F714B0FF14C5BE6A0050805F /* DoubleFetch.xcdatamodeld */; };
 		F714B10414C5BE6B0050805F /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F714B10314C5BE6B0050805F /* MasterViewController.m */; };
-		F714B10714C5BE6B0050805F /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F714B10614C5BE6B0050805F /* DetailViewController.m */; };
 		F714B10A14C5BE6B0050805F /* MasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F714B10814C5BE6B0050805F /* MasterViewController.xib */; };
-		F714B10D14C5BE6B0050805F /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F714B10B14C5BE6B0050805F /* DetailViewController.xib */; };
 		F714B11514C5C3D90050805F /* FetchedResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F714B11414C5C3D90050805F /* FetchedResultsViewController.m */; };
 		F714B11814C5C9010050805F /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = F714B11714C5C9010050805F /* Item.m */; };
 /* End PBXBuildFile section */
@@ -38,10 +36,7 @@
 		F714B10014C5BE6A0050805F /* DoubleFetch.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DoubleFetch.xcdatamodel; sourceTree = "<group>"; };
 		F714B10214C5BE6B0050805F /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
 		F714B10314C5BE6B0050805F /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
-		F714B10514C5BE6B0050805F /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		F714B10614C5BE6B0050805F /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		F714B10914C5BE6B0050805F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MasterViewController.xib; sourceTree = "<group>"; };
-		F714B10C14C5BE6B0050805F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DetailViewController.xib; sourceTree = "<group>"; };
 		F714B11314C5C3D90050805F /* FetchedResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FetchedResultsViewController.h; sourceTree = "<group>"; };
 		F714B11414C5C3D90050805F /* FetchedResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FetchedResultsViewController.m; sourceTree = "<group>"; };
 		F714B11614C5C9010050805F /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
@@ -96,18 +91,15 @@
 			children = (
 				F714B0FC14C5BE670050805F /* AppDelegate.h */,
 				F714B0FD14C5BE6A0050805F /* AppDelegate.m */,
+				F714B11614C5C9010050805F /* Item.h */,
+				F714B11714C5C9010050805F /* Item.m */,
 				F714B10214C5BE6B0050805F /* MasterViewController.h */,
 				F714B10314C5BE6B0050805F /* MasterViewController.m */,
 				F714B11314C5C3D90050805F /* FetchedResultsViewController.h */,
 				F714B11414C5C3D90050805F /* FetchedResultsViewController.m */,
-				F714B10514C5BE6B0050805F /* DetailViewController.h */,
-				F714B10614C5BE6B0050805F /* DetailViewController.m */,
 				F714B10814C5BE6B0050805F /* MasterViewController.xib */,
-				F714B10B14C5BE6B0050805F /* DetailViewController.xib */,
 				F714B0FF14C5BE6A0050805F /* DoubleFetch.xcdatamodeld */,
 				F714B0F414C5BE670050805F /* Supporting Files */,
-				F714B11614C5C9010050805F /* Item.h */,
-				F714B11714C5C9010050805F /* Item.m */,
 			);
 			path = DoubleFetch;
 			sourceTree = "<group>";
@@ -175,7 +167,6 @@
 			files = (
 				F714B0F814C5BE670050805F /* InfoPlist.strings in Resources */,
 				F714B10A14C5BE6B0050805F /* MasterViewController.xib in Resources */,
-				F714B10D14C5BE6B0050805F /* DetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,7 +181,6 @@
 				F714B0FE14C5BE6A0050805F /* AppDelegate.m in Sources */,
 				F714B10114C5BE6A0050805F /* DoubleFetch.xcdatamodeld in Sources */,
 				F714B10414C5BE6B0050805F /* MasterViewController.m in Sources */,
-				F714B10714C5BE6B0050805F /* DetailViewController.m in Sources */,
 				F714B11514C5C3D90050805F /* FetchedResultsViewController.m in Sources */,
 				F714B11814C5C9010050805F /* Item.m in Sources */,
 			);
@@ -213,14 +203,6 @@
 				F714B10914C5BE6B0050805F /* en */,
 			);
 			name = MasterViewController.xib;
-			sourceTree = "<group>";
-		};
-		F714B10B14C5BE6B0050805F /* DetailViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F714B10C14C5BE6B0050805F /* en */,
-			);
-			name = DetailViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

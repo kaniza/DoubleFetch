@@ -7,11 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "FetchedResultsViewController.h"
-
-@class DetailViewController;
-
 #import <CoreData/CoreData.h>
+#import "FetchedResultsViewController.h"
 
 @interface MasterViewController : UITableViewController
 
