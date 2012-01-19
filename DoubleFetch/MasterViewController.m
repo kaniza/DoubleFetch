@@ -9,6 +9,12 @@
 #import "MasterViewController.h"
 #import "FetchedResultsViewController.h"
 
+@interface NSArray (CellTitles)
+
++ (NSArray *)titles;
+
+@end
+
 @implementation MasterViewController
 
 @synthesize managedObjectContext = __managedObjectContext;
@@ -17,7 +23,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.title = @"DoubleFetchSample";
+        self.title = @"DoubleFetch";
     }
     return self;
 }
@@ -31,52 +37,10 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Release any cached data, images, etc that aren't in use.
-}
-
-#pragma mark - View lifecycle
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-    // Set up the edit and add buttons.
-    self.navigationItem.leftBarButtonItem = self.editButtonItem;
-
-    UIBarButtonItem *addButton = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject)] autorelease];
-    self.navigationItem.rightBarButtonItem = addButton;
-}
-
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-	[super viewWillDisappear:animated];
-}
-
-- (void)viewDidDisappear:(BOOL)animated
-{
-	[super viewDidDisappear:animated];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    // Return YES for supported orientations
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
@@ -101,9 +65,7 @@
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
-    cell.textLabel.text = [[NSArray arrayWithObjects:@"All", @"Checked 1", @"Checked 2", nil] objectAtIndex:indexPath.row];
-
-    //[self configureCell:cell atIndexPath:indexPath];
+    cell.textLabel.text = [[NSArray titles] objectAtIndex:indexPath.row];
     return cell;
 }
 
@@ -126,19 +88,34 @@
 {
     NSPredicate *predicate = nil;
     switch (indexPath.row) {
-        case 1:
-            predicate = [NSPredicate predicateWithFormat:@"checked = YES"];
-            break;
-        case 2:
-            predicate = [self predicateForChecked];
-            break;
-        default:
-            predicate = nil;
-            break;
+    case 0:
+        predicate = nil;
+        break;
+    case 1:
+        predicate = [NSPredicate predicateWithFormat:@"checked = YES"];
+        break;
+    case 2:
+        predicate = [self predicateForChecked];
+        break;
+    default:
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+        return;
     }
+    NSString *title = [[NSArray titles] objectAtIndex:indexPath.row];
     FetchedResultsViewController *viewController = [[[FetchedResultsViewController alloc] initWithPredicate:predicate] autorelease];
     viewController.managedObjectContext = self.managedObjectContext;
+    viewController.title = title;
     [self.navigationController pushViewController:viewController animated:YES];
+}
+
+@end
+
+
+@implementation NSArray (CellTitles)
+
++ (NSArray *)titles
+{
+    return [NSArray arrayWithObjects:@"All", @"Checked 1", @"Checked 2", nil];
 }
 
 @end
