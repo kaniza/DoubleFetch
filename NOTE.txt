@@ -1,0 +1,90 @@
+                     Core Data + UITableView Tips
+                     ============================
+
+Author: かねうちてつや
+Date: 2012-01-22 07:29:44 JST
+
+
+自己紹介 
+---------
+* かねうちてつや 
+* Twitter @kaniza 
+* Facebook.com/kaniza 
+* Cocoa勉強会関西 代表 
+* 関西オープンソース+コミュニティ大決戦(KOF) 実行委員 
+
+今日のお話 
+-----------
+* Core Data 
+* UITableViewとNSFetchedResultsController 
+* NSFetchedResultsControllerDelegate 
+* メールアプリのフラグみたいなUIを実装する時のTips 
+
+きっかけ 
+---------
+* Twitter の @iphone_dev_jp 
+  メールアプリのフラグみたいなUIを実装したいんだけど、フラグ外したとた
+  んに一覧から消えて困ってます...
+* 「そーいえば同じようなコトで悩んだことあったなー」 
+* 勉強会ネタになるぞ! 
+
+NSFetchedResultsController(FRC)+Delegate 
+-----------------------------------------
+* Core Dataの内容をUITableViewに表示するときにピッタリなクラス 
+  + セクションと行でどのデータが該当するかわかる 
+  + バッチとかキャッシュとかいろいろやってくれる 
+  + データの変更通知がくる（Insert/Delete/Update）←これ重要 
+
+使い方 
+-------
+* NSFetchedResultsControllerにNSFetchRequestを設定 
+  + どのクラス（NSManagedObject/データ型） 
+  + 検索条件は？ 
+  + ソート順は？ 
+  + その他もろもろ 
+  + performFetch! 
+  + delegateメソッドの引数を見てUITableViewを操作する 
+
+コードを見てみる 
+-----------------
+
+デモ 
+-----
+
+消える時の動き 
+---------------
+  1. 「チェック付き」の条件で fetch
+  2. セル選択
+  3. オブジェクトのチェックフラグが外れる
+  4. オブジェクトが「チェック付き」の条件から外れる
+  5. 条件に合うオブジェクトが変わったことを FRC が検知
+  6. delegate に「消えたよ」通知がくる
+  7. 消える
+
+デモ 
+-----
+
+すぐには消えてほしくないときもある 
+-----------------------------------
+* Mail.app のスマートフォルダのような動き 
+* 「フラグ付き」で抽出しつつ、外してもすぐには消えない 
+
+どうするか？ 
+-------------
+* コードで書いてみる 
+
+やってること 
+-------------
+* いったん目的の条件で ObjectID を fetch 
+* 「fetch した ObjectID の集合に含まれる」という条件で再度 fetch 
+* 目的の条件に合わなくなっても消えない! 
+
+まとめ 
+-------
+* Core Data っていうのがあります 
+* NSFetchedResultsController/Delegate で Core Data を便利に使えます 
+* ObjectID や特定のプロパティだけ fetch するとかできます（全部fetchより軽い） 
+
+サンプルコード 
+---------------
+* [https://github.com/kaniza/DoubleFetchb] 
