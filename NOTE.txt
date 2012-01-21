@@ -2,7 +2,7 @@
                      ============================
 
 Author: かねうちてつや
-Date: 2012-01-22 07:29:44 JST
+Date: 2012-01-22 07:38:02 JST
 
 
 自己紹介 
@@ -87,4 +87,4 @@ NSFetchedResultsController(FRC)+Delegate
 
 サンプルコード 
 ---------------
-* [https://github.com/kaniza/DoubleFetchb] 
+* [https://github.com/kaniza/DoubleFetch] 

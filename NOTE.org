@@ -56,4 +56,4 @@
 ** NSFetchedResultsController/Delegate で Core Data を便利に使えます
 ** ObjectID や特定のプロパティだけ fetch するとかできます（全部fetchより軽い）
 * サンプルコード
-** https://github.com/kaniza/DoubleFetchb
+** https://github.com/kaniza/DoubleFetch
