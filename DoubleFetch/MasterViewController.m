@@ -3,7 +3,7 @@
 //  DoubleFetch
 //
 //  Created by Kaneuchi Tetsuya on 12/01/17.
-//  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 Tetsuya Kaneuchi. All rights reserved.
 //
 
 #import "MasterViewController.h"
@@ -12,6 +12,12 @@
 @interface NSArray (CellTitles)
 
 + (NSArray *)titles;
+
+@end
+
+@interface NSPredicate (DoubleFetchAdditions)
+
++ (NSPredicate *)predicateForCheckedItemsInManagedObjectContext:(NSManagedObjectContext *)managedObjectContext;
 
 @end
 
@@ -26,6 +32,23 @@
         self.title = @"DoubleFetch";
     }
     return self;
+}
+
+- (NSPredicate *)predicateForChecked
+{
+    NSFetchRequest *request = [[[NSFetchRequest alloc] init] autorelease];
+    [request setEntity:[NSEntityDescription entityForName:@"Item" inManagedObjectContext:self.managedObjectContext]];
+    
+    NSSortDescriptor *sortDescriptor =
+        [[[NSSortDescriptor alloc] initWithKey:@"title" ascending:YES] autorelease];
+    NSArray *sortDescriptors =
+        [NSArray arrayWithObjects:sortDescriptor, nil];
+    [request setSortDescriptors:sortDescriptors];
+    [request setPredicate:[NSPredicate predicateWithFormat:@"checked = YES"]];
+    [request setResultType:NSManagedObjectIDResultType];
+    NSError *err = nil;
+    NSArray *result = [self.managedObjectContext executeFetchRequest:request error:&err];
+    return [NSPredicate predicateWithFormat:@"self in %@", result];
 }
 							
 - (void)dealloc
@@ -69,20 +92,7 @@
     return cell;
 }
 
-- (NSPredicate *)predicateForChecked
-{
-    NSFetchRequest *request = [[[NSFetchRequest alloc] init] autorelease];
-    [request setEntity:[NSEntityDescription entityForName:@"Item" inManagedObjectContext:self.managedObjectContext]];
 
-    NSSortDescriptor *sortDescriptor = [[[NSSortDescriptor alloc] initWithKey:@"title" ascending:YES] autorelease];
-    NSArray *sortDescriptors = [NSArray arrayWithObjects:sortDescriptor, nil];
-    [request setSortDescriptors:sortDescriptors];
-    [request setPredicate:[NSPredicate predicateWithFormat:@"checked = YES"]];
-    [request setResultType:NSManagedObjectIDResultType];
-    NSError *err = nil;
-    NSArray *result = [self.managedObjectContext executeFetchRequest:request error:&err];
-    return [NSPredicate predicateWithFormat:@"self in %@", result];
-}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -92,10 +102,11 @@
         predicate = nil;
         break;
     case 1:
-        predicate = [NSPredicate predicateWithFormat:@"checked = YES"];
+        predicate =
+            [NSPredicate predicateWithFormat:@"checked = YES"];
         break;
     case 2:
-        predicate = [self predicateForChecked];
+        predicate = [NSPredicate predicateForCheckedItemsInManagedObjectContext:self.managedObjectContext];
         break;
     default:
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
@@ -110,12 +121,31 @@
 
 @end
 
-
 @implementation NSArray (CellTitles)
 
 + (NSArray *)titles
 {
-    return [NSArray arrayWithObjects:@"All", @"Single Fetch", @"Double Fetch", nil];
+    return [NSArray arrayWithObjects:@"All Items", @"Checked Items (Dynamic)", @"Checked Items", nil];
+}
+
+@end
+
+@implementation NSPredicate (DoubleFetchAdditions)
+
++ (NSPredicate *)predicateForCheckedItemsInManagedObjectContext:(NSManagedObjectContext *)managedObjectContext
+{
+    NSFetchRequest *request = [[[NSFetchRequest alloc] init] autorelease];
+    [request setEntity:[NSEntityDescription entityForName:@"Item"
+                                   inManagedObjectContext:managedObjectContext]];
+    NSSortDescriptor *sortDescriptor =
+        [[[NSSortDescriptor alloc] initWithKey:@"title" ascending:YES] autorelease];
+    NSArray *sortDescriptors =
+        [NSArray arrayWithObjects:sortDescriptor, nil];
+    [request setSortDescriptors:sortDescriptors];
+    [request setPredicate:[NSPredicate predicateWithFormat:@"checked = YES"]];
+    [request setResultType:NSManagedObjectIDResultType];
+    NSArray *result = [managedObjectContext executeFetchRequest:request error:NULL];
+    return [NSPredicate predicateWithFormat:@"self IN %@", result];
 }
 
 @end
