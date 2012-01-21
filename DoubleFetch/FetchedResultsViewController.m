@@ -3,7 +3,7 @@
 //  DoubleFetch
 //
 //  Created by Kaneuchi Tetsuya on 12/01/17.
-//  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 Tetsuya Kaneuchi. All rights reserved.
 //
 
 #import "FetchedResultsViewController.h"

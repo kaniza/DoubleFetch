@@ -115,7 +115,7 @@
 
 + (NSArray *)titles
 {
-    return [NSArray arrayWithObjects:@"All", @"Checked 1", @"Checked 2", nil];
+    return [NSArray arrayWithObjects:@"All", @"Single Fetch", @"Double Fetch", nil];
 }
 
 @end
