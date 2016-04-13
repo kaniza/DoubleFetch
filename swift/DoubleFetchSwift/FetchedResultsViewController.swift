@@ -67,8 +67,8 @@ class FetchedResultsViewController: UITableViewController, NSFetchedResultsContr
     // MARK: - Fetched results controller
     
     var fetchedResultsController: NSFetchedResultsController {
-        if fetchedResultsController != nil {
-            return fetchedResultsController!
+        if _fetchedResultsController != nil {
+            return _fetchedResultsController!
         }
         
         let fetchRequest = NSFetchRequest()
