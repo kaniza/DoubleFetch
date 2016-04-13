@@ -2,3 +2,5 @@
 
 NSFetchedResultsController で抽出した条件に合わなくなってもすぐには
 UITableView から消えないようにする方法についてです。
+
+発表当時は Objective-C 版のみでしたが、Swift による実装も追加しました。
